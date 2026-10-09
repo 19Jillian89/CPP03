@@ -14,29 +14,37 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int	main()
+int main()
 {
-	std::cout << "Creation FragTrap" << std::endl;
-	FragTrap fraggy("Fraggy");
+    std::cout << "Creation FragTrap" << std::endl;
+    FragTrap fraggy("Fraggy");
 
-	std::cout << "\n Statistics " << std::endl;
-	
-	//Use Claptrap's attack, but it will deal a full 30 base damage.
-	fraggy.attack("a heavy target");
-	fraggy.takeDamage(50);
-	fraggy.beRepaired(20);
+    std::cout << "\n Statistics " << std::endl;
 
-	std::cout << "\n Special ability " << std::endl;
-	fraggy.highFivesGuys();
+    //Use Claptrap's attack, but it will deal a full 30 base damage.
+    fraggy.attack("a heavy target");
+    fraggy.takeDamage(50);
+    fraggy.beRepaired(20);
 
-	std::cout << "\n Living with Scavtrap " << std::endl;
-	{
-		std::cout << "ScavTrap enters a local block " << std::endl;
-        	ScavTrap scavguy("Scavguy");
-        	scavguy.guardGate();
-        	std::cout << "ScavTrap emerges from the block!" << std::endl;
-	}
+    std::cout << "\n Special ability " << std::endl;
+    fraggy.highFivesGuys();
 
-	std::cout << "\n FRAGTRAP DESTRUCTION " << std::endl;
-	return 0;
-}
+    std::cout << "\n Living with Scavtrap " << std::endl;
+    {
+        std::cout << "ScavTrap enters a local block " << std::endl;
+            ScavTrap scavguy("Scavguy");
+            scavguy.guardGate();
+            std::cout << "ScavTrap emerges from the block!" << std::endl;
+    }
+
+    std::cout << "\n Copy constructor and assignment " << std::endl;
+    FragTrap fraggyClone(fraggy);
+    fraggyClone.highFivesGuys();
+
+    FragTrap anotherFrag("AnotherFrag");
+    anotherFrag = fraggy;
+    anotherFrag.attack("a heavy target");
+
+    std::cout << "\n FRAGTRAP DESTRUCTION " << std::endl;
+    return 0;
+}               
