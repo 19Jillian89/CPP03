@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
@@ -37,6 +36,4 @@ class ClapTrap
         void beRepaired(unsigned int amount);
 };       
 
-
 #endif
-
