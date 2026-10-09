@@ -13,7 +13,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-int	main()
+int main()
 {
     std::cout << "Character creation" << std::endl;
     ClapTrap clappy("Clappy");
@@ -32,10 +32,23 @@ int	main()
     std::cout << "\n Energy Depletion " << std::endl;
     ClapTrap tiredBoy("Tired");
     //Vengono consumati i punti energia
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; i++)
+    {
         tiredBoy.attack("un muro");
     }
+
+    std::cout << "\n Copy constructor test " << std::endl;
+    ClapTrap original("Original");
+    original.takeDamage(3); // modifico lo stato prima di copiare
+    ClapTrap copy(original); // qui deve stampare "ClapTrap copy." una sola volta
+    copy.attack("Test Dummy"); // se la copia è corretta, danno e nome coerenti con original
+
+    std::cout << "\n Copy assignment test " << std::endl;
+    ClapTrap third("Third");
+    third = original; // qui deve stampare "ClapTrap Copy assignment operator called"
+    third.attack("Test Dummy");
 
     std::cout << "\nEnd of Program (Destructors)" << std::endl;
     return 0;
 }
+
