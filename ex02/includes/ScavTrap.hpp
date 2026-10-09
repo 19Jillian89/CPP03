@@ -15,20 +15,20 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap 
+class ScavTrap : public ClapTrap
 {
-	public:
-		ScavTrap();
-		ScavTrap(const std::string& name);
-		ScavTrap(const ScavTrap& other);
-		ScavTrap& operator=(const ScavTrap& other);
-		~ScavTrap();
+    public:
+        ScavTrap();
+        ScavTrap(const std::string& name);
+        ScavTrap(const ScavTrap& other);
+        ScavTrap& operator=(const ScavTrap& other);
+        ~ScavTrap();
 
-		//Override
-		void attack(const std::string& target);
+        //Override
+        void attack(const std::string& target);
 
-		//special ability (Subject)
-		void guardGate();
+        //special ability (Subject)
+        void guardGate();
 
 };
 
