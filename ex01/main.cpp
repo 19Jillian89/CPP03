@@ -13,21 +13,29 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main()
+int main()
 {
-	std::cout << "Character creation" << std::endl;
-	ScavTrap scavy("Scavy");
+    std::cout << "Character creation" << std::endl;
+    ScavTrap scavy("Scavy");
 
-	std::cout << "\n Statistics and Attack " << std::endl;
-	scavy.attack("enemy");
+    std::cout << "\n Statistics and Attack " << std::endl;
+    scavy.attack("enemy");
 
-	std::cout << "\n Inherited Functions " << std::endl;
-	scavy.takeDamage(50);
-	scavy.beRepaired(22);
+    std::cout << "\n Inherited Functions " << std::endl;
+    scavy.takeDamage(50);
+    scavy.beRepaired(22);
 
-	std::cout << "\n Special Ability " << std::endl;
-	scavy.guardGate();
+    std::cout << "\n Special Ability " << std::endl;
+    scavy.guardGate();
 
-	std::cout << "\n Destruction " << std::endl;
-	return 0;
+    std::cout << "\n Copy constructor and assignment " << std::endl;
+    ScavTrap scavyClone(scavy);
+    scavyClone.attack("test dummy");
+
+    ScavTrap another("Another");
+    another = scavy;
+    another.attack("test dummy");
+
+    std::cout << "\n Destruction " << std::endl;
+    return 0;
 }
