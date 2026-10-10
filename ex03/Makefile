@@ -27,20 +27,21 @@ OBJS        = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+    $(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+    $(CXX) $(CXXFLAGS) -c $< -o $@
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -I$(INC_DIR) -c $< -o $@
+    $(CXX) $(CXXFLAGS) -I$(INC_DIR) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+    rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+    rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
